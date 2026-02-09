@@ -31,35 +31,11 @@ body {
 }
 
 /* Atom-like nodes */
-.atom-animation {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 220px;
-  height: 220px;
-}
 
-.node {
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  background: #38bdf8;
-  border-radius: 50%;
-  opacity: 0.8;
-  animation: orbit 5s linear infinite;
-}
 
-.node1 { top: 0; left: 50%; animation-delay: 0s; }
-.node2 { top: 50%; left: 100%; animation-delay: 1s; }
-.node3 { top: 100%; left: 50%; animation-delay: 2s; }
-.node4 { top: 50%; left: 0%; animation-delay: 3s; }
-.node5 { top: 50%; left: 50%; animation-delay: 4s; }
 
-@keyframes orbit {
-  0% { transform: rotate(0deg) translateX(100px) rotate(0deg); }
-  100% { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
-}
+
+
 
 /* Tagline */
 .tagline {
