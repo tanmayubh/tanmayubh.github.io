@@ -1,0 +1,90 @@
+/* General */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #0b0f19;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+}
+
+/* Logo */
+.logo-container {
+  text-align: center;
+  position: relative;
+}
+
+.logo {
+  font-size: 3.5rem;
+  letter-spacing: 5px;
+  color: #38bdf8;
+  z-index: 10;
+}
+
+/* Atom-like nodes */
+.atom-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 220px;
+  height: 220px;
+}
+
+.node {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #38bdf8;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: orbit 5s linear infinite;
+}
+
+.node1 { top: 0; left: 50%; animation-delay: 0s; }
+.node2 { top: 50%; left: 100%; animation-delay: 1s; }
+.node3 { top: 100%; left: 50%; animation-delay: 2s; }
+.node4 { top: 50%; left: 0%; animation-delay: 3s; }
+.node5 { top: 50%; left: 50%; animation-delay: 4s; }
+
+@keyframes orbit {
+  0% { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+}
+
+/* Tagline */
+.tagline {
+  margin-top: 280px;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+/* Ideas conveyor belt */
+.ideas-belt {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  margin-top: 50px;
+}
+
+.idea {
+  flex: none;
+  padding: 0 50px;
+  font-size: 1.2rem;
+  white-space: nowrap;
+  animation: scrollBelt 15s linear infinite;
+}
+
+@keyframes scrollBelt {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
