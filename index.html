@@ -1,39 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Portfolio</title>
-  
-  <!-- Link your CSS -->
-  <link rel="stylesheet" href="./style.css"/>
-  
-  <!-- Optional: Google Fonts for modern look -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <!-- Optional: Animate.css or custom animations -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <div class="hero-section">
-    <!-- Centered Logo -->
-    <div class="logo-container">
-      <h1 class="logo">STEP INSIDE</h1>
-    <div class="atom-animation">
-  <img src="images/architecture.png" alt="animated node" class="animated-node"/>
-</div>
-      <p class="tagline">Modern Networks. Intelligent Solutions.</p>
-    </div>
+  <!-- Ribbon -->
+  <nav class="ribbon">
+    <button class="nav-btn active" data-page="home">Home</button>
+    <button class="nav-btn" data-page="about">About</button>
+    <button class="nav-btn" data-page="tech">Tech</button>
+    <button class="nav-btn" data-page="projects">Projects</button>
+    <button class="nav-btn" data-page="experience">Experience</button>
+    <button class="nav-btn" data-page="gallery">Gallery</button>
+  </nav>
+    <div class="pages">
+    <section id="home" class="page active">
 
-    <!-- Moving conveyor belt of ideas -->
-    <div class="ideas-belt">
-      <div class="idea">Transparent workflows</div>
-      <div class="idea">Empowering governance</div>
-      <div class="idea">Collective ownership</div>
+    <h1>STEP INSIDE</h1>
+    <h2>Modern Networks. Intelligent Solutions.</h2>
 
+      <svg id="lines"></svg>
+
+  <!-- Nodes -->
+  <div class="nodes">
+    <!--<img src="images/node1.png" class="node"-->
+    <img src="images/node1.png" class="node">
+    <img src="images/node2.png" class="node">
+    <img src="images/node3.png" class="node">
+    <img src="images/node4.png" class="node">
+    <img src="images/node5.png" class="node">
+    <img src="images/node6.png" class="node">
+  </div>
+
+    <img id="footstep" class="footstep" src="images/steps.png" alt="footstep">
+      <div class="conveyor-wrapper">
+    <img src="images/conveyor.png" class="conveyor" alt="conveyor">
+
+    <div class="text-track">
+      <span>Transparent Workflows</span>
+      <span>Empowering Governance</span>
+      <span>Collective Ownership</span>
     </div>
   </div>
+  
+    <script src="script.js"></script>
+</div>
+</section>
+
+
+
+    <section id="about" class="page"></section>
+    <section id="tech" class="page"></section>
+    <section id="projects" class="page"></section>
+    <section id="experience" class="page"></section>
+    <section id="gallery" class="page"></section>
+  </div>
+
+
+
+
+
 </body>
+</html>
 
 
 
- 

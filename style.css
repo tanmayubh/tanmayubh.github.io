@@ -1,66 +1,178 @@
-/* General */
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: #0b0f19;
-  color: #fff;
-  overflow-x: hidden;
-}
-
-/* Hero Section */
-.hero-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   height: 100vh;
-  position: relative;
+  background: #f0f0f0;
+  /*font-family: system-ui, sans-serif;*/
 }
 
-/* Logo */
-.logo-container {
-  text-align: center;
-  position: relative;
-}
-
-.logo {
-  font-size: 3.5rem;
-  letter-spacing: 5px;
-  color: #38bdf8;
-  z-index: 10;
-}
-
-/* Atom-like nodes */
-
-
-
-
-
-
-/* Tagline */
-.tagline {
-  margin-top: 280px;
-  font-size: 1.5rem;
-  color: #fff;
-}
-
-/* Ideas conveyor belt */
-.ideas-belt {
+/* Ribbon container */
+.ribbon {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  overflow: hidden;
+  gap: 14px;
+  padding: 12px 18px;
+  background: rgba(20, 20, 20, 0.85);
+  border-radius: 40px;
+  backdrop-filter: blur(8px);
+  z-index: 100;
+}
+
+/* Buttons */
+.nav-btn {
+  background: transparent;
+  border: none;
+  color: #aaa;
+  font-size: 14px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* Hover */
+.nav-btn:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Active glow */
+.nav-btn.active {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.35);
+}
+
+/* Pages */
+.pages {
+  height: 100vh;
+}
+
+.page {
+  display: none;
+  height: 100vh;
+
+}
+
+/* Active page */
+.page.active {
+  display: block;
+}
+
+.footstep {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px; /* moderate size */
+  height: auto;
+  opacity: 0;
+  transition: top 0.2s linear, opacity 0.2s linear;
+}
+
+h1 {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #111;
+  /*z-index: 10;
+  pointer-events: none; /* text won’t interfere with animation */
+}
+
+h2{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 28px;
+  font-weight: 600;
+  color: #ea0b0b;
+  letter-spacing: 1px;}
+
+
+
+.nodes {
+  position: relative;
   width: 100%;
-  margin-top: 50px;
+  height: 100%;
 }
 
-.idea {
-  flex: none;
-  padding: 0 50px;
-  font-size: 1.2rem;
+.node {
+  position: absolute;
+  width: 145px;
+  height: 145px;
+  opacity: 0.9;
+}
+
+/* SVG lines */
+#lines {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+line {
+  stroke: rgba(237, 14, 14, 0.5);
+  stroke-width: 1.5;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: draw 1s ease forwards;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Container */
+.conveyor-wrapper {
+  position: absolute;
+  width: 1000px;
+  /*max-width: 1000px;*/
+  top: 79%;
+  left: 25%;
+}
+
+/* Conveyor image (static) */
+.conveyor {
+  width: 100%;
+  display: block;
+}
+
+/* Moving text track */
+.text-track {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  width: 200%;
+  display: flex;
+  gap: 50px;
+  transform: translateY(-10%);
+  animation: moveText 4s linear infinite;
+}
+
+/* Text style */
+.text-track span {
   white-space: nowrap;
-  animation: scrollBelt 15s linear infinite;
+  font-size: 25px;
+  font-weight: 500;
+  color: #03f813;
+  opacity: 0.9;
 }
 
-@keyframes scrollBelt {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+/* Animation */
+@keyframes moveText {
+  from {
+    transform: translate(-26%, -50%);
+  }
+  to {
+    transform: translate(-15%, -50%);
+  }
 }
