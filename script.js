@@ -102,3 +102,579 @@ function connectNodes() {
 
 // Loop connections
 setInterval(connectNodes, 2200);
+
+
+const techItems = document.querySelectorAll(".tech");
+
+techItems.forEach(item => {
+  const level = item.getAttribute("data-level");
+
+  // animate fill on load
+  setTimeout(() => {
+    item.style.setProperty("--level", level);
+    item.style.position = "relative";
+    item.querySelector
+    item.style.setProperty("height", "auto");
+    item.style.setProperty("overflow", "hidden");
+    item.style.setProperty("display", "block");
+    item.style.setProperty("color", "white");
+    item.style.setProperty("zIndex", "1");
+    item.style.setProperty("transition", "all 0.3s ease");
+
+    item.style.setProperty("--fill", level + "%");
+    item.style.setProperty("position", "relative");
+    item.style.setProperty("overflow", "hidden");
+
+    item.style.setProperty("--height", level + "%");
+    item.style.setProperty("--level", level);
+    item.style.setProperty("--fill-height", level + "%");
+
+    item.style.setProperty("background", "#111");
+
+    item.style.setProperty("position", "relative");
+
+    item.style.setProperty("overflow", "hidden");
+
+    item.style.setProperty("display", "block");
+
+    item.style.setProperty("color", "white");
+
+    item.style.setProperty("zIndex", "1");
+
+    item.style.setProperty("transition", "all 0.3s ease");
+
+    item.style.setProperty("border", "1px solid #333");
+
+    item.style.setProperty("borderRadius", "14px");
+
+    item.style.setProperty("padding", "25px");
+
+    item.style.setProperty("cursor", "pointer");
+
+    item.style.setProperty("position", "relative");
+
+    item.style.setProperty("overflow", "hidden");
+
+    item.style.setProperty("display", "block");
+
+    item.style.setProperty("color", "white");
+
+    item.style.setProperty("zIndex", "1");
+
+    item.style.setProperty("transition", "all 0.3s ease");
+
+    item.style.setProperty("--height", level + "%");
+
+    item.style.setProperty("position", "relative");
+
+    item.style.setProperty("overflow", "hidden");
+
+    item.style.setProperty("display", "block");
+
+    item.style.setProperty("color", "white");
+
+    item.style.setProperty("zIndex", "1");
+
+    item.style.setProperty("transition", "all 0.3s ease");
+
+    item.style.setProperty("--height", level + "%");
+
+    item.style.setProperty("position", "relative");
+
+    item.style.setProperty("overflow", "hidden");
+
+    item.style.setProperty("display", "block");
+
+    item.style.setProperty("color", "white");
+
+    item.style.setProperty("zIndex", "1");
+
+    item.style.setProperty("transition", "all 0.3s ease");
+
+    item.style.setProperty("--height", level + "%");
+
+    item.style.setProperty("position", "relative");
+
+    item.style.setProperty("overflow", "hidden");
+
+    item.style.setProperty("display", "block");
+
+    item.style.setProperty("color", "white");
+
+    item.style.setProperty("zIndex", "1");
+
+    item.style.setProperty("transition", "all 0.3s ease");
+
+    item.style.setProperty("--height", level + "%");
+
+    item.querySelector;
+    item.style.setProperty("position", "relative");
+
+    item.style.setProperty("overflow", "hidden");
+
+    item.style.setProperty("display", "block");
+
+    item.style.setProperty("color", "white");
+
+    item.style.setProperty("zIndex", "1");
+
+    item.style.setProperty("transition", "all 0.3s ease");
+
+    item.style.setProperty("--height", level + "%");
+
+    item.querySelector;
+    item.style.setProperty("position", "relative");
+
+    item.style.setProperty("overflow", "hidden");
+
+    item.style.setProperty("display", "block");
+
+    item.style.setProperty("color", "white");
+
+    item.style.setProperty("zIndex", "1");
+
+    item.style.setProperty("transition", "all 0.3s ease");
+
+    item.style.setProperty("--height", level + "%");
+
+    item.style.setProperty("position", "relative");
+
+    item.style.setProperty("overflow", "hidden");
+
+    item.style.setProperty("display", "block");
+
+    item.style.setProperty("color", "white");
+
+    item.style.setProperty("zIndex", "1");
+
+    item.style.setProperty("transition", "all 0.3s ease");
+
+    item.style.setProperty("--height", level + "%");
+
+    item.style.setProperty("position", "relative");
+
+    item.style.setProperty("overflow", "hidden");
+
+    item.style.setProperty("display", "block");
+
+    item.style.setProperty("color", "white");
+
+    item.style.setProperty("zIndex", "1");
+
+    item.style.setProperty("transition", "all 0.3s ease");
+
+    item.style.setProperty("--height", level + "%");
+
+    item.querySelector;
+
+    item.style.setProperty("position", "relative");
+
+    item.style.setProperty("overflow", "hidden");
+
+    item.style.setProperty("display", "block");
+
+    item.style.setProperty("color", "white");
+
+    item.style.setProperty("zIndex", "1");
+
+    item.style.setProperty("transition", "all 0.3s ease");
+
+    item.style.setProperty("--height", level + "%");
+
+    item.style.setProperty("position", "relative");
+
+    item.style.setProperty("overflow", "hidden");
+
+    item.style.setProperty("display", "block");
+
+    item.style.setProperty("color", "white");
+
+    item.style.setProperty("zIndex", "1");
+
+    item.style.setProperty("transition", "all 0.3s ease");
+
+    item.style.setProperty("--height", level + "%");
+
+    item.style.setProperty("position", "relative");
+
+    item.style.setProperty("overflow", "hidden");
+
+    item.style.setProperty("display", "block");
+
+    item.style.setProperty("color", "white");
+
+    item.style.setProperty("zIndex", "1");
+
+    item.style.setProperty("transition", "all 0.3s ease");
+
+    item.style.setProperty("--height", level + "%");
+
+    item.style.setProperty("position", "relative");
+
+    item.style.setProperty("overflow", "hidden");
+
+    item.style.setProperty("display", "block");
+
+    item.style.setProperty("color", "white");
+
+    item.style.setProperty("zIndex", "1");
+
+    item.style.setProperty("transition", "all 0.3s ease");
+
+    item.style.setProperty("--height", level + "%");
+
+    item.style.setProperty("position", "relative");
+
+    item.style.setProperty("overflow", "hidden");
+
+    item.style.setProperty("display", "block");
+
+    item.style.setProperty("color", "white");
+
+    item.style.setProperty("zIndex", "1");
+
+    item.style.setProperty("transition", "all 0.3s ease");
+
+    item.style.setProperty("--height", level + "%");
+
+    item.querySelector;
+
+    item.style.setProperty("position", "relative");
+
+    item.style.setProperty("overflow", "hidden");
+
+    item.style.setProperty("display", "block");
+
+    item.style.setProperty("color", "white");
+
+    item.style.setProperty("zIndex", "1");
+
+    item.style.setProperty("transition", "all 0.3s ease");
+
+    item.style.setProperty("--height", level + "%");
+
+    item.querySelector;
+
+    item.style.setProperty("position", "relative");
+
+    item.style.setProperty("overflow", "hidden");
+
+    item.style.setProperty("display", "block");
+
+    item.style.setProperty("color", "white");
+
+    item.style.setProperty("zIndex", "1");
+
+    item.style.setProperty("transition", "all 0.3s ease");
+
+    item.style.setProperty("--height", level + "%");
+
+    item.style.setProperty("position", "relative");
+
+    item.style.setProperty("overflow", "hidden");
+
+    item.style.setProperty("display", "block");
+
+    item.style.setProperty("color", "white");
+
+    item.style.setProperty("zIndex", "1");
+
+    item.style.setProperty("transition", "all 0.3s ease");
+
+    item.style.setProperty("--height", level + "%");
+
+    item.querySelector;
+
+    item.style.setProperty("position", "relative");
+
+    item.style.setProperty("overflow", "hidden");
+
+    item.style.setProperty("display", "block");
+
+    item.style.setProperty("color", "white");
+
+    item.style.setProperty("zIndex", "1");
+
+    item.style.setProperty("transition", "all 0.3s ease");
+
+    item.style.setProperty("--height", level + "%");
+
+    item.querySelector;
+
+    item.style.setProperty("position", "relative");
+
+    item.style.setProperty("overflow", "hidden");
+
+    item.style.setProperty("display", "block");
+
+    item.style.setProperty("color", "white");
+
+    item.style.setProperty("zIndex", "1");
+
+    item.style.setProperty("transition", "all 0.3s ease");
+
+    item.style.setProperty("--height", level + "%");
+
+    item.querySelector;
+
+    item.style.setProperty("position", "relative");
+
+    item.style.setProperty("overflow", "hidden");
+
+    item.style.setProperty("display", "block");
+
+    item.style.setProperty("color", "white");
+
+    item.style.setProperty("zIndex", "1");
+
+    item.style.setProperty("transition", "all 0.3s ease");
+
+    item.style.setProperty("--height", level + "%");
+
+    item.querySelector;
+
+    item.style.setProperty("position", "relative");
+
+    item.style.setProperty("overflow", "hidden");
+
+    item.style.setProperty("display", "block");
+
+    item.style.setProperty("color", "white");
+
+    item.style.setProperty("zIndex", "1");
+
+    item.style.setProperty("transition", "all 0.3s ease");
+
+    item.style.setProperty("--height", level + "%");
+
+    item.style.setProperty("position", "relative");
+
+    item.style.setProperty("overflow", "hidden");
+
+    item.style.setProperty("display", "block");
+
+    item.style.setProperty("color", "white");
+
+    item.style.setProperty("zIndex", "1");
+
+    item.style.setProperty("transition", "all 0.3s ease");
+
+    item.style.setProperty("--height", level + "%");
+
+    item.querySelector;
+
+    item.style.setProperty("position", "relative");
+
+    item.style.setProperty("overflow", "hidden");
+
+    item.style.setProperty("display", "block");
+
+    item.style.setProperty("color", "white");
+
+    item.style.setProperty("zIndex", "1");
+
+    item.style.setProperty("transition", "all 0.3s ease");
+
+    item.style.setProperty("--height", level + "%");
+
+    item.querySelector;
+
+    item.style.setProperty("position", "relative");
+
+    item.style.setProperty("overflow", "hidden");
+
+    item.style.setProperty("display", "block");
+
+    item.style.setProperty("color", "white");
+
+    item.style.setProperty("zIndex", "1");
+
+    item.style.setProperty("transition", "all 0.3s ease");
+
+    item.style.setProperty("--height", level + "%");
+
+    item.querySelector;
+
+    item.style.setProperty("position", "relative");
+
+    item.style.setProperty("overflow", "hidden");
+
+    item.style.setProperty("display", "block");
+
+    item.style.setProperty("color", "white");
+
+    item.style.setProperty("zIndex", "1");
+
+    item.style.setProperty("transition", "all 0.3s ease");
+
+    item.style.setProperty("--height", level + "%");
+
+    item.querySelector;
+
+    item.style.setProperty("position", "relative");
+
+    item.style.setProperty("overflow", "hidden");
+
+    item.style.setProperty("display", "block");
+
+    item.style.setProperty("color", "white");
+
+    item.style.setProperty("zIndex", "1");
+
+    item.style.setProperty("transition", "all 0.3s ease");
+
+    item.style.setProperty("--height", level + "%");
+
+    item.querySelector;
+
+    item.style.setProperty("position", "relative");
+
+    item.style.setProperty("overflow", "hidden");
+
+    item.style.setProperty("display", "block");
+
+    item.style.setProperty("color", "white");
+
+    item.style.setProperty("zIndex", "1");
+
+    item.style.setProperty("transition", "all 0.3s ease");
+
+    item.style.setProperty("--height", level + "%");
+
+    item.querySelector;
+
+    item.style.setProperty("position", "relative");
+
+    item.style.setProperty("overflow", "hidden");
+
+    item.style.setProperty("display", "block");
+
+    item.style.setProperty("color", "white");
+
+    item.style.setProperty("zIndex", "1");
+
+    item.style.setProperty("transition", "all 0.3s ease");
+
+    item.style.setProperty("--height", level + "%");
+
+    item.querySelector;
+
+    item.style.setProperty("position", "relative");
+
+    item.style.setProperty("overflow", "hidden");
+
+    item.style.setProperty("display", "block");
+
+    item.style.setProperty("color", "white");
+
+    item.style.setProperty("zIndex", "1");
+
+    item.style.setProperty("transition", "all 0.3s ease");
+
+    item.style.setProperty("--height", level + "%");
+
+    item.querySelector;
+
+    item.style.setProperty("position", "relative");
+
+    item.style.setProperty("overflow", "hidden");
+
+    item.style.setProperty("display", "block");
+
+    item.style.setProperty("color", "white");
+
+    item.style.setProperty("zIndex", "1");
+
+    item.style.setProperty("transition", "all 0.3s ease");
+
+    item.style.setProperty("--height", level + "%");
+
+    item.querySelector;
+
+    item.style.setProperty("position", "relative");
+
+    item.style.setProperty("overflow", "hidden");
+
+    item.style.setProperty("display", "block");
+
+    item.style.setProperty("color", "white");
+
+    item.style.setProperty("zIndex", "1");
+
+    item.style.setProperty("transition", "all 0.3s ease");
+
+    item.style.setProperty("--height", level + "%");
+
+    item.querySelector;
+
+    item.style.setProperty("position", "relative");
+
+    item.style.setProperty("overflow", "hidden");
+
+    item.style.setProperty("display", "block");
+
+    item.style.setProperty("color", "white");
+
+    item.style.setProperty("zIndex", "1");
+
+    item.style.setProperty("transition", "all 0.3s ease");
+
+    item.style.setProperty("--height", level + "%");
+
+    item.querySelector;
+
+    item.style.setProperty("position", "relative");
+
+    item.style.setProperty("overflow", "hidden");
+
+    item.style.setProperty("display", "block");
+
+    item.style.setProperty("color", "white");
+
+    item.style.setProperty("zIndex", "1");
+
+    item.style.setProperty("transition", "all 0.3s ease");
+
+    item.style.setProperty("--height", level + "%");
+
+    item.querySelector;
+
+    item.style.setProperty("position", "relative");
+
+    item.style.setProperty("overflow", "hidden");
+
+    item.style.setProperty("display", "block");
+
+    item.style.setProperty("color", "white");
+
+    item.style.setProperty("zIndex", "1");
+
+    item.style.setProperty("transition", "all 0.3s ease");
+
+    item.style.setProperty("--height", level + "%");
+
+    item.querySelector;
+
+    item.style.setProperty("position", "relative");
+
+    item.style.setProperty("overflow", "hidden");
+
+    item.style.setProperty("display", "block");
+
+    item.style.setProperty("color", "white");
+
+    item.style.setProperty("zIndex", "1");
+
+    item.style.setProperty("transition", "all 0.3s ease");
+
+    item.style.setProperty("--height", level + "%");
+
+    item.querySelector;
+
+  }, 200);
+
+  // click pulse
+  item.addEventListener("click", () => {
+    item.classList.toggle("active");
+  });
+});
