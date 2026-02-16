@@ -1,111 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <!-- Ribbon -->
-  <nav class="ribbon">
-    <button class="nav-btn active" data-page="home">Home</button>
-    <button class="nav-btn" data-page="about">About</button>
-    <button class="nav-btn" data-page="tech">Tech</button>
-    <button class="nav-btn" data-page="projects">Projects</button>
-    <button class="nav-btn" data-page="experience">Experience</button>
-    <button class="nav-btn" data-page="gallery">Gallery</button>
-  </nav>
-    <div class="pages">
-    <section id="home" class="page active">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <nav class="ribbon" aria-label="Primary">
+      <button class="nav-btn active" data-page="home">Home</button>
+      <button class="nav-btn" data-page="about">About</button>
+      <button class="nav-btn" data-page="tech">Tech</button>
+      <button class="nav-btn" data-page="projects">Projects</button>
+      <button class="nav-btn" data-page="experience">Experience</button>
+    </nav>
 
-    <h1>STEP INSIDE</h1>
-    <h2>Modern Networks. Intelligent Solutions.</h2>
+    <main class="pages">
+      <section id="home" class="page active home-page" aria-label="Home">
+        <h1 class="home-title">STEP INSIDE</h1>
+        <h2 class="home-subtitle">Modern Networks. Intelligent Solutions.</h2>
 
-      <svg id="lines"></svg>
+        <svg id="lines" aria-hidden="true"></svg>
 
-  <!-- Nodes -->
-  <div class="nodes">
-    <!--<img src="images/node1.png" class="node"-->
-    <img src="images/node1.png" class="node">
-    <img src="images/node2.png" class="node">
-    <img src="images/node3.png" class="node">
-    <img src="images/node4.png" class="node">
-    <img src="images/node5.png" class="node">
-    <img src="images/node6.png" class="node">
-  </div>
+        <div class="nodes" aria-hidden="true">
+          <img src="images/node1.png" class="node" alt="Network node 1">
+          <img src="images/node2.png" class="node" alt="Network node 2">
+          <img src="images/node3.png" class="node" alt="Network node 3">
+          <img src="images/node4.png" class="node" alt="Network node 4">
+          <img src="images/node5.png" class="node" alt="Network node 5">
+          <img src="images/node6.png" class="node" alt="Network node 6">
+        </div>
 
-    <img id="footstep" class="footstep" src="images/steps.png" alt="footstep">
-      <div class="conveyor-wrapper">
-    <img src="images/conveyor.png" class="conveyor" alt="conveyor">
+        <img id="footstep" class="footstep" src="images/steps.png" alt="Walking footsteps">
 
-    <div class="text-track">
-      <span>Transparent Workflows</span>
-      <span>Empowering Governance</span>
-      <span>Collective Ownership</span>
-    </div>
+        <div class="conveyor-wrapper" aria-hidden="true">
+          <img src="images/conveyor.png" class="conveyor" alt="Conveyor belt graphic">
+          <div class="text-track">
+            <span>Transparent Workflows</span>
+            <span>Empowering Governance</span>
+            <span>Collective Ownership</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="page content-page" aria-label="About">
+        <div class="content-wrap">
+          <h1>About Me</h1>
+          <p>
+            <strong>My Story:</strong> My foundation in mechanical engineering fueled my curiosity in manufacturing and
+            automation production lines, shaping how I understand systems at scale. I now work in software backend
+            development and DevOps, while strengthening my expertise in network architecture and cybersecurity.
+          </p>
+          <p>
+            <strong>Philosophy:</strong> I translate client and team pain points into B2B products designed for real
+            adoption. I actively explore market validation, penetration strategies, data analytics, and emerging
+            technological white spaces to identify opportunities where technology can create defensible advantage.
+          </p>
+          <p>
+            <strong>Vision:</strong> With an Industrial Engineering background, I am learning to build collaborative
+            software ventures that enable sustainable processes and resource efficiency, bridging technical depth with
+            business insight.
+          </p>
+          <p>
+            <strong>Life Beyond Work:</strong> I maintain balance by discovering great places to eat, see, drink, and
+            enjoy vibrant social experiences. Music is a passion, initially hip-hop and now techno, and I look forward
+            to producing with my own MIDI setup. I also enjoy baking and experimenting with flavors in the kitchen.
+          </p>
+        </div>
+      </section>
+
+      <section id="tech" class="page content-page" aria-label="Technology Stack">
+        <div class="content-wrap">
+          <h1>Technology Stack</h1>
+          <div class="tech-grid">
+            <div class="tech-card" style="--level: 90%">
+              <img src="images/sts.png" alt="Spring Tool Suite">
+              <h3>Spring Tool Suite</h3>
+              <div class="power"></div>
+            </div>
+
+            <div class="tech-card" style="--level: 85%">
+              <img src="images/vscode.png" alt="VS Code">
+              <h3>VS Code</h3>
+              <div class="power"></div>
+            </div>
+
+            <div class="tech-card" style="--level: 80%">
+              <img src="images/postgres.png" alt="PostgreSQL">
+              <h3>PostgreSQL</h3>
+              <div class="power"></div>
+            </div>
+
+            <div class="tech-card" style="--level: 75%">
+              <img src="images/docker.png" alt="Docker">
+              <h3>Docker</h3>
+              <div class="power"></div>
+            </div>
+
+            <div class="tech-card" style="--level: 70%">
+              <img src="images/aws.png" alt="AWS">
+              <h3>AWS</h3>
+              <div class="power"></div>
+            </div>
+
+            <div class="tech-card" style="--level: 65%">
+              <img src="images/java.png" alt="Java">
+              <h3>Java</h3>
+              <div class="power"></div>
+            </div>
+
+            <div class="tech-card" style="--level: 60%">
+              <img src="images/python.png" alt="Python">
+              <h3>Python</h3>
+              <div class="power"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="page content-page" aria-label="Projects">
+        <div class="content-wrap">
+          <h1>GitHub Projects</h1>
+          <div id="repo-container" class="repo-grid"></div>
+        </div>
+      </section>
+
+      <section id="experience" class="page content-page" aria-label="Experience">
+        <div class="content-wrap experience-wrap">
+          <h1>Experience</h1>
+          <p>Professional journey and leadership experiences.</p>
+          <a href="assets/Lebenslauf_T_Ubhate.pdf" download class="cv-btn">Download CV</a>
+        </div>
+      </section>
+    </main>
+
     <script src="script.js"></script>
-</div>
-</section>
-</div>
-
-<div>
-    <section id="about" class="page">
-      <h1>About Me</h1>
-      <p>
-        My Story
-        My foundation in mechanical engineering fueled my curiosity in manufacturing and automation production lines, shaping how I understand systems at scale. I now work in software backend development and DevOps, while strengthening my expertise in network architecture and cybersecurity.
-      </p>
-      <p>Philosophy
-        I translate client and team pain points into B2B products designed for real adoption. I actively explore market validation, penetration strategies, data analytics, and emerging technological white spaces to identify opportunities where technology can create defensible advantage.
-      </p>
-      <p>Vision
-        With an Industrial Engineering background, I am learning to build collaborative software ventures that enable sustainable processes and resource efficiency, bridging technical depth with business insight.
-      </p> 
-      <p> 
-        Life Beyond Work
-        I maintain balance by discovering great places to eat, see, drink, and enjoy vibrant social experiences. Music is a passion—initially hip-hop and now techno—and I look forward to producing with my own MIDI setup. I also enjoy baking and experimenting with flavors in the kitchen.
-      </p>
-    </section>
-</div>
-
-<div>
-  <section id="tech" class="page">
-  <h1>Technology Matrix</h1>
-
-  <div class="tech-grid">
-
-    <div class="tech" data-level="90">Spring Tool Suite</div>
-    <div class="tech" data-level="85">Visual Studio Code</div>
-    <div class="tech" data-level="80">PostgreSQL</div>
-    <div class="tech" data-level="75">Docker</div>
-    <div class="tech" data-level="85">Postman</div>
-    <div class="tech" data-level="80">GitHub</div>
-    <div class="tech" data-level="70">AWS (EC2, S3, IAM, RDS)</div>
-    <div class="tech" data-level="75">JIRA</div>
-    <div class="tech" data-level="80">Microsoft 365</div>
-
-    <div class="tech" data-level="65">Java</div>
-    <div class="tech" data-level="60">Python</div>
-    <div class="tech" data-level="45">HTML</div>
-    <div class="tech" data-level="45">CSS</div>
-
-  </div>
-</section>
-</div>
-
-
-    <section id="projects" class="page"></section>
-    <section id="experience" class="page"></section>
-    <section id="gallery" class="page"></section>
-  </div>
-
-
-
-
-
-</body>
+  </body>
 </html>
-
-
-

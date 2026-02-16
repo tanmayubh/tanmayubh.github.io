@@ -1,97 +1,104 @@
 const buttons = document.querySelectorAll('.nav-btn');
 const pages = document.querySelectorAll('.page');
 
-buttons.forEach(button => {
+function setActivePage(pageId) {
+  buttons.forEach((button) => {
+    button.classList.toggle('active', button.dataset.page === pageId);
+  });
+
+  pages.forEach((page) => {
+    page.classList.toggle('active', page.id === pageId);
+  });
+}
+
+buttons.forEach((button) => {
   button.addEventListener('click', () => {
-    // Remove active states
-    buttons.forEach(b => b.classList.remove('active'));
-    pages.forEach(p => p.classList.remove('active'));
-
-    // Activate clicked button
-    button.classList.add('active');
-
-    // Show corresponding page
-    const pageId = button.getAttribute('data-page');
-    document.getElementById(pageId).classList.add('active');
+    const pageId = button.dataset.page;
+    if (pageId) {
+      setActivePage(pageId);
+    }
   });
 });
 
-
 const footstep = document.getElementById('footstep');
-const steps = ['images/steps.png', 'images/steps2.png']; // alternate images
+const steps = ['images/steps.png', 'images/steps2.png'];
 let stepIndex = 0;
-let position = window.innerHeight * 0.10; // start at 25% of screen
-const endPosition = window.innerHeight * 0.30; // end at 50% of screen
-const stepHeight = 15; // pixels each step moves
+let position = 0;
+let endPosition = 0;
+const stepHeight = 15;
+
+function resetFootstepBounds() {
+  position = window.innerHeight * 0.1;
+  endPosition = window.innerHeight * 0.3;
+}
 
 function animateStep() {
-  footstep.src = steps[stepIndex % steps.length];
-  stepIndex++;
-  footstep.style.top = position + 'px';
-  footstep.style.opacity = 1;
+  if (!footstep) return;
 
+  footstep.src = steps[stepIndex % steps.length];
+  stepIndex += 1;
+  footstep.style.top = `${position}px`;
+  footstep.style.opacity = '1';
   position += stepHeight;
 
   if (position <= endPosition) {
     setTimeout(() => {
-      footstep.style.opacity = 0;
-      setTimeout(animateStep, 100); // fade out then next step
+      footstep.style.opacity = '0';
+      setTimeout(animateStep, 100);
     }, 300);
-  } else {
-    footstep.style.transition = 'none';
-    position = window.innerHeight * 0.10;
-    footstep.style.top = position + 'px';
-    stepIndex = 0
-      // Start next step after short delay
-    setTimeout(() => {
-    footstep.style.transition = 'top 0.2s linear, opacity 0.2s linear';
-    animateStep(); // continue walking
-  }, 50);
-}}
-animateStep();
+    return;
+  }
 
+  footstep.style.transition = 'none';
+  resetFootstepBounds();
+  footstep.style.top = `${position}px`;
+  stepIndex = 0;
+
+  setTimeout(() => {
+    footstep.style.transition = 'top 0.2s linear, opacity 0.2s linear';
+    animateStep();
+  }, 50);
+}
 
 const nodes = document.querySelectorAll('.node');
 const svg = document.getElementById('lines');
 
-/* ---- FIXED DIAMOND POSITIONS (6 NODES) ---- */
 const diamondPositions = [
-  { x: 46.5, y: 45 }, // top
-  { x: 36, y: 54 }, // left
-  { x: 58, y: 54 }, // right
-  { x: 46.5, y: 62 }, // bottom
-  { x: 37.5, y: 71 }, // inner left
-  { x: 56, y: 71 }  // inner right
+  { x: 46.5, y: 45 },
+  { x: 36, y: 54 },
+  { x: 58, y: 54 },
+  { x: 46.5, y: 62 },
+  { x: 37.5, y: 71 },
+  { x: 56, y: 71 }
 ];
 
-nodes.forEach((node, index) => {
-  const pos = diamondPositions[index];
-  node.style.left = pos.x + '%';
-  node.style.top = pos.y + '%';
-});
+function placeNodes() {
+  nodes.forEach((node, index) => {
+    const pos = diamondPositions[index];
+    if (!pos) return;
+    node.style.left = `${pos.x}%`;
+    node.style.top = `${pos.y}%`;
+  });
+}
 
-/* ---- CONNECT NODES (DYNAMIC LINES ONLY) ---- */
 function connectNodes() {
+  if (!svg || nodes.length === 0) return;
+
   svg.innerHTML = '';
 
-  for (let i = 0; i < nodes.length; i++) {
-    for (let j = i + 1; j < nodes.length; j++) {
-      if (Math.random() > 0.6) {
-        const a = nodes[i].getBoundingClientRect();
-        const b = nodes[j].getBoundingClientRect();
+  for (let i = 0; i < nodes.length; i += 1) {
+    for (let j = i + 1; j < nodes.length; j += 1) {
+      if (Math.random() <= 0.6) continue;
 
-        const line = document.createElementNS(
-          'http://www.w3.org/2000/svg',
-          'line'
-        );
+      const a = nodes[i].getBoundingClientRect();
+      const b = nodes[j].getBoundingClientRect();
 
-        line.setAttribute('x1', a.left + a.width / 2);
-        line.setAttribute('y1', a.top + a.height / 2);
-        line.setAttribute('x2', b.left + b.width / 2);
-        line.setAttribute('y2', b.top + b.height / 2);
-
-        svg.appendChild(line);
-      }
+      const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      line.setAttribute('x1', a.left + a.width / 2);
+      line.setAttribute('y1', a.top + a.height / 2);
+      line.setAttribute('x2', b.left + b.width / 2);
+      line.setAttribute('y2', b.top + b.height / 2);
+      svg.appendChild(line);
     }
   }
 
@@ -100,581 +107,57 @@ function connectNodes() {
   }, 1800);
 }
 
-// Loop connections
-setInterval(connectNodes, 2200);
-
-
-const techItems = document.querySelectorAll(".tech");
-
-techItems.forEach(item => {
-  const level = item.getAttribute("data-level");
-
-  // animate fill on load
-  setTimeout(() => {
-    item.style.setProperty("--level", level);
-    item.style.position = "relative";
-    item.querySelector
-    item.style.setProperty("height", "auto");
-    item.style.setProperty("overflow", "hidden");
-    item.style.setProperty("display", "block");
-    item.style.setProperty("color", "white");
-    item.style.setProperty("zIndex", "1");
-    item.style.setProperty("transition", "all 0.3s ease");
-
-    item.style.setProperty("--fill", level + "%");
-    item.style.setProperty("position", "relative");
-    item.style.setProperty("overflow", "hidden");
-
-    item.style.setProperty("--height", level + "%");
-    item.style.setProperty("--level", level);
-    item.style.setProperty("--fill-height", level + "%");
-
-    item.style.setProperty("background", "#111");
-
-    item.style.setProperty("position", "relative");
-
-    item.style.setProperty("overflow", "hidden");
-
-    item.style.setProperty("display", "block");
-
-    item.style.setProperty("color", "white");
-
-    item.style.setProperty("zIndex", "1");
-
-    item.style.setProperty("transition", "all 0.3s ease");
-
-    item.style.setProperty("border", "1px solid #333");
-
-    item.style.setProperty("borderRadius", "14px");
-
-    item.style.setProperty("padding", "25px");
-
-    item.style.setProperty("cursor", "pointer");
-
-    item.style.setProperty("position", "relative");
-
-    item.style.setProperty("overflow", "hidden");
-
-    item.style.setProperty("display", "block");
-
-    item.style.setProperty("color", "white");
-
-    item.style.setProperty("zIndex", "1");
-
-    item.style.setProperty("transition", "all 0.3s ease");
-
-    item.style.setProperty("--height", level + "%");
-
-    item.style.setProperty("position", "relative");
-
-    item.style.setProperty("overflow", "hidden");
-
-    item.style.setProperty("display", "block");
-
-    item.style.setProperty("color", "white");
-
-    item.style.setProperty("zIndex", "1");
-
-    item.style.setProperty("transition", "all 0.3s ease");
-
-    item.style.setProperty("--height", level + "%");
-
-    item.style.setProperty("position", "relative");
-
-    item.style.setProperty("overflow", "hidden");
-
-    item.style.setProperty("display", "block");
-
-    item.style.setProperty("color", "white");
-
-    item.style.setProperty("zIndex", "1");
-
-    item.style.setProperty("transition", "all 0.3s ease");
-
-    item.style.setProperty("--height", level + "%");
-
-    item.style.setProperty("position", "relative");
-
-    item.style.setProperty("overflow", "hidden");
-
-    item.style.setProperty("display", "block");
-
-    item.style.setProperty("color", "white");
-
-    item.style.setProperty("zIndex", "1");
-
-    item.style.setProperty("transition", "all 0.3s ease");
-
-    item.style.setProperty("--height", level + "%");
-
-    item.querySelector;
-    item.style.setProperty("position", "relative");
-
-    item.style.setProperty("overflow", "hidden");
-
-    item.style.setProperty("display", "block");
-
-    item.style.setProperty("color", "white");
-
-    item.style.setProperty("zIndex", "1");
-
-    item.style.setProperty("transition", "all 0.3s ease");
-
-    item.style.setProperty("--height", level + "%");
-
-    item.querySelector;
-    item.style.setProperty("position", "relative");
-
-    item.style.setProperty("overflow", "hidden");
-
-    item.style.setProperty("display", "block");
-
-    item.style.setProperty("color", "white");
-
-    item.style.setProperty("zIndex", "1");
-
-    item.style.setProperty("transition", "all 0.3s ease");
-
-    item.style.setProperty("--height", level + "%");
-
-    item.style.setProperty("position", "relative");
-
-    item.style.setProperty("overflow", "hidden");
-
-    item.style.setProperty("display", "block");
-
-    item.style.setProperty("color", "white");
-
-    item.style.setProperty("zIndex", "1");
-
-    item.style.setProperty("transition", "all 0.3s ease");
-
-    item.style.setProperty("--height", level + "%");
-
-    item.style.setProperty("position", "relative");
-
-    item.style.setProperty("overflow", "hidden");
-
-    item.style.setProperty("display", "block");
-
-    item.style.setProperty("color", "white");
-
-    item.style.setProperty("zIndex", "1");
-
-    item.style.setProperty("transition", "all 0.3s ease");
-
-    item.style.setProperty("--height", level + "%");
-
-    item.querySelector;
-
-    item.style.setProperty("position", "relative");
-
-    item.style.setProperty("overflow", "hidden");
-
-    item.style.setProperty("display", "block");
-
-    item.style.setProperty("color", "white");
-
-    item.style.setProperty("zIndex", "1");
-
-    item.style.setProperty("transition", "all 0.3s ease");
-
-    item.style.setProperty("--height", level + "%");
-
-    item.style.setProperty("position", "relative");
-
-    item.style.setProperty("overflow", "hidden");
-
-    item.style.setProperty("display", "block");
-
-    item.style.setProperty("color", "white");
-
-    item.style.setProperty("zIndex", "1");
-
-    item.style.setProperty("transition", "all 0.3s ease");
-
-    item.style.setProperty("--height", level + "%");
-
-    item.style.setProperty("position", "relative");
-
-    item.style.setProperty("overflow", "hidden");
-
-    item.style.setProperty("display", "block");
-
-    item.style.setProperty("color", "white");
-
-    item.style.setProperty("zIndex", "1");
-
-    item.style.setProperty("transition", "all 0.3s ease");
-
-    item.style.setProperty("--height", level + "%");
-
-    item.style.setProperty("position", "relative");
-
-    item.style.setProperty("overflow", "hidden");
-
-    item.style.setProperty("display", "block");
-
-    item.style.setProperty("color", "white");
-
-    item.style.setProperty("zIndex", "1");
-
-    item.style.setProperty("transition", "all 0.3s ease");
-
-    item.style.setProperty("--height", level + "%");
-
-    item.style.setProperty("position", "relative");
-
-    item.style.setProperty("overflow", "hidden");
-
-    item.style.setProperty("display", "block");
-
-    item.style.setProperty("color", "white");
-
-    item.style.setProperty("zIndex", "1");
-
-    item.style.setProperty("transition", "all 0.3s ease");
-
-    item.style.setProperty("--height", level + "%");
-
-    item.querySelector;
-
-    item.style.setProperty("position", "relative");
-
-    item.style.setProperty("overflow", "hidden");
-
-    item.style.setProperty("display", "block");
-
-    item.style.setProperty("color", "white");
-
-    item.style.setProperty("zIndex", "1");
-
-    item.style.setProperty("transition", "all 0.3s ease");
-
-    item.style.setProperty("--height", level + "%");
-
-    item.querySelector;
-
-    item.style.setProperty("position", "relative");
-
-    item.style.setProperty("overflow", "hidden");
-
-    item.style.setProperty("display", "block");
-
-    item.style.setProperty("color", "white");
-
-    item.style.setProperty("zIndex", "1");
-
-    item.style.setProperty("transition", "all 0.3s ease");
-
-    item.style.setProperty("--height", level + "%");
-
-    item.style.setProperty("position", "relative");
-
-    item.style.setProperty("overflow", "hidden");
-
-    item.style.setProperty("display", "block");
-
-    item.style.setProperty("color", "white");
-
-    item.style.setProperty("zIndex", "1");
-
-    item.style.setProperty("transition", "all 0.3s ease");
-
-    item.style.setProperty("--height", level + "%");
-
-    item.querySelector;
-
-    item.style.setProperty("position", "relative");
-
-    item.style.setProperty("overflow", "hidden");
-
-    item.style.setProperty("display", "block");
-
-    item.style.setProperty("color", "white");
-
-    item.style.setProperty("zIndex", "1");
-
-    item.style.setProperty("transition", "all 0.3s ease");
-
-    item.style.setProperty("--height", level + "%");
-
-    item.querySelector;
-
-    item.style.setProperty("position", "relative");
-
-    item.style.setProperty("overflow", "hidden");
-
-    item.style.setProperty("display", "block");
-
-    item.style.setProperty("color", "white");
-
-    item.style.setProperty("zIndex", "1");
-
-    item.style.setProperty("transition", "all 0.3s ease");
-
-    item.style.setProperty("--height", level + "%");
-
-    item.querySelector;
-
-    item.style.setProperty("position", "relative");
-
-    item.style.setProperty("overflow", "hidden");
-
-    item.style.setProperty("display", "block");
-
-    item.style.setProperty("color", "white");
-
-    item.style.setProperty("zIndex", "1");
-
-    item.style.setProperty("transition", "all 0.3s ease");
-
-    item.style.setProperty("--height", level + "%");
-
-    item.querySelector;
-
-    item.style.setProperty("position", "relative");
-
-    item.style.setProperty("overflow", "hidden");
-
-    item.style.setProperty("display", "block");
-
-    item.style.setProperty("color", "white");
-
-    item.style.setProperty("zIndex", "1");
-
-    item.style.setProperty("transition", "all 0.3s ease");
-
-    item.style.setProperty("--height", level + "%");
-
-    item.style.setProperty("position", "relative");
-
-    item.style.setProperty("overflow", "hidden");
-
-    item.style.setProperty("display", "block");
-
-    item.style.setProperty("color", "white");
-
-    item.style.setProperty("zIndex", "1");
-
-    item.style.setProperty("transition", "all 0.3s ease");
-
-    item.style.setProperty("--height", level + "%");
-
-    item.querySelector;
-
-    item.style.setProperty("position", "relative");
-
-    item.style.setProperty("overflow", "hidden");
-
-    item.style.setProperty("display", "block");
-
-    item.style.setProperty("color", "white");
-
-    item.style.setProperty("zIndex", "1");
-
-    item.style.setProperty("transition", "all 0.3s ease");
-
-    item.style.setProperty("--height", level + "%");
-
-    item.querySelector;
-
-    item.style.setProperty("position", "relative");
-
-    item.style.setProperty("overflow", "hidden");
-
-    item.style.setProperty("display", "block");
-
-    item.style.setProperty("color", "white");
-
-    item.style.setProperty("zIndex", "1");
-
-    item.style.setProperty("transition", "all 0.3s ease");
-
-    item.style.setProperty("--height", level + "%");
-
-    item.querySelector;
-
-    item.style.setProperty("position", "relative");
-
-    item.style.setProperty("overflow", "hidden");
-
-    item.style.setProperty("display", "block");
-
-    item.style.setProperty("color", "white");
-
-    item.style.setProperty("zIndex", "1");
-
-    item.style.setProperty("transition", "all 0.3s ease");
-
-    item.style.setProperty("--height", level + "%");
-
-    item.querySelector;
-
-    item.style.setProperty("position", "relative");
-
-    item.style.setProperty("overflow", "hidden");
-
-    item.style.setProperty("display", "block");
-
-    item.style.setProperty("color", "white");
-
-    item.style.setProperty("zIndex", "1");
-
-    item.style.setProperty("transition", "all 0.3s ease");
-
-    item.style.setProperty("--height", level + "%");
-
-    item.querySelector;
-
-    item.style.setProperty("position", "relative");
-
-    item.style.setProperty("overflow", "hidden");
-
-    item.style.setProperty("display", "block");
-
-    item.style.setProperty("color", "white");
-
-    item.style.setProperty("zIndex", "1");
-
-    item.style.setProperty("transition", "all 0.3s ease");
-
-    item.style.setProperty("--height", level + "%");
-
-    item.querySelector;
-
-    item.style.setProperty("position", "relative");
-
-    item.style.setProperty("overflow", "hidden");
-
-    item.style.setProperty("display", "block");
-
-    item.style.setProperty("color", "white");
-
-    item.style.setProperty("zIndex", "1");
-
-    item.style.setProperty("transition", "all 0.3s ease");
-
-    item.style.setProperty("--height", level + "%");
-
-    item.querySelector;
-
-    item.style.setProperty("position", "relative");
-
-    item.style.setProperty("overflow", "hidden");
-
-    item.style.setProperty("display", "block");
-
-    item.style.setProperty("color", "white");
-
-    item.style.setProperty("zIndex", "1");
-
-    item.style.setProperty("transition", "all 0.3s ease");
-
-    item.style.setProperty("--height", level + "%");
-
-    item.querySelector;
-
-    item.style.setProperty("position", "relative");
-
-    item.style.setProperty("overflow", "hidden");
-
-    item.style.setProperty("display", "block");
-
-    item.style.setProperty("color", "white");
-
-    item.style.setProperty("zIndex", "1");
-
-    item.style.setProperty("transition", "all 0.3s ease");
-
-    item.style.setProperty("--height", level + "%");
-
-    item.querySelector;
-
-    item.style.setProperty("position", "relative");
-
-    item.style.setProperty("overflow", "hidden");
-
-    item.style.setProperty("display", "block");
-
-    item.style.setProperty("color", "white");
-
-    item.style.setProperty("zIndex", "1");
-
-    item.style.setProperty("transition", "all 0.3s ease");
-
-    item.style.setProperty("--height", level + "%");
-
-    item.querySelector;
-
-    item.style.setProperty("position", "relative");
-
-    item.style.setProperty("overflow", "hidden");
-
-    item.style.setProperty("display", "block");
-
-    item.style.setProperty("color", "white");
-
-    item.style.setProperty("zIndex", "1");
-
-    item.style.setProperty("transition", "all 0.3s ease");
-
-    item.style.setProperty("--height", level + "%");
-
-    item.querySelector;
-
-    item.style.setProperty("position", "relative");
-
-    item.style.setProperty("overflow", "hidden");
-
-    item.style.setProperty("display", "block");
-
-    item.style.setProperty("color", "white");
-
-    item.style.setProperty("zIndex", "1");
-
-    item.style.setProperty("transition", "all 0.3s ease");
-
-    item.style.setProperty("--height", level + "%");
-
-    item.querySelector;
-
-    item.style.setProperty("position", "relative");
-
-    item.style.setProperty("overflow", "hidden");
-
-    item.style.setProperty("display", "block");
-
-    item.style.setProperty("color", "white");
-
-    item.style.setProperty("zIndex", "1");
-
-    item.style.setProperty("transition", "all 0.3s ease");
-
-    item.style.setProperty("--height", level + "%");
-
-    item.querySelector;
-
-    item.style.setProperty("position", "relative");
-
-    item.style.setProperty("overflow", "hidden");
-
-    item.style.setProperty("display", "block");
-
-    item.style.setProperty("color", "white");
-
-    item.style.setProperty("zIndex", "1");
-
-    item.style.setProperty("transition", "all 0.3s ease");
-
-    item.style.setProperty("--height", level + "%");
-
-    item.querySelector;
-
-  }, 200);
-
-  // click pulse
-  item.addEventListener("click", () => {
-    item.classList.toggle("active");
-  });
+function loadGithubRepos() {
+  const username = 'tanmayubh';
+  const repoContainer = document.getElementById('repo-container');
+  if (!repoContainer) return;
+
+  fetch(`https://api.github.com/users/${username}/repos`)
+    .then((res) => res.json())
+    .then((repos) => {
+      if (!Array.isArray(repos)) {
+        repoContainer.innerHTML = '<p>Error loading repositories.</p>';
+        return;
+      }
+
+      const filteredRepos = repos.filter((repo) => !repo.fork);
+
+      filteredRepos.forEach((repo) => {
+        const card = document.createElement('div');
+        card.className = 'repo-card';
+
+        card.innerHTML = `
+          <h3>${repo.name}</h3>
+          <p>${repo.description || 'No description available.'}</p>
+          <div class="repo-meta">${repo.language ? `Language: ${repo.language}` : ''}</div>
+          <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+        `;
+
+        repoContainer.appendChild(card);
+      });
+    })
+    .catch(() => {
+      repoContainer.innerHTML = '<p>Failed to fetch repositories.</p>';
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  resetFootstepBounds();
+  placeNodes();
+
+  if (footstep) {
+    animateStep();
+  }
+
+  if (svg && nodes.length > 0) {
+    connectNodes();
+    setInterval(connectNodes, 2200);
+  }
+
+  loadGithubRepos();
+});
+
+window.addEventListener('resize', () => {
+  resetFootstepBounds();
+  placeNodes();
 });
