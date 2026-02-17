@@ -120,7 +120,13 @@ function loadGithubRepos() {
         return;
       }
 
-      const filteredRepos = repos.filter((repo) => !repo.fork);
+      const excludedRepos = new Set(['tanmayubh.github.io']);
+      const filteredRepos = repos.filter(
+        (repo) => {
+          const name = (repo.name || '').toLowerCase();
+          return !repo.fork && !excludedRepos.has(name) && !name.includes('academic');
+        }
+      );
 
       filteredRepos.forEach((repo) => {
         const card = document.createElement('div');

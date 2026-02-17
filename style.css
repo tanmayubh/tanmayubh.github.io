@@ -233,8 +233,6 @@ line {
   color: #eee;
   border-radius: var(--radius-lg);
   padding: 25px;
-  position: relative;
-  overflow: hidden;
   transition: 0.3s ease;
   border: 1px solid var(--border-dark);
 }
@@ -250,36 +248,31 @@ line {
 }
 
 .tech-card h3 {
-  margin: 0 0 20px;
+  margin: 0 0 14px;
   font-weight: 500;
 }
 
-.tech-card .power {
-  height: 6px;
-  background: #222;
-  border-radius: 10px;
-  overflow: hidden;
-  position: relative;
+.tech-subheading {
+  margin: 14px 0 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #f0f0f0;
 }
 
-.tech-card .power::after {
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: var(--level);
-  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-blue));
-  border-radius: 10px;
-  animation: load 1.5s ease forwards;
+.tech-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
-@keyframes load {
-  from {
-    width: 0;
-  }
-
-  to {
-    width: var(--level);
-  }
+.tech-keywords span {
+  font-size: 0.82rem;
+  line-height: 1.3;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #1f1f1f;
+  border: 1px solid #343434;
+  color: #e6e6e6;
 }
 
 .repo-grid {
