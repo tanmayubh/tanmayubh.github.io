@@ -156,7 +156,7 @@ line {
 .conveyor-wrapper {
   position: absolute;
   width: min(1000px, 90vw);
-  top: 79%;
+  top: 74%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
