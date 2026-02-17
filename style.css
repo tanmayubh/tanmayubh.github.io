@@ -136,7 +136,7 @@ line {
 
 .node {
   position: absolute;
-  width: clamp(84px, 10vw, 145px);
+  width: clamp(84px, 10vw, 120px);
   height: auto;
   opacity: 0.9;
 }

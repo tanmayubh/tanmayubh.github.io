@@ -65,11 +65,11 @@ const svg = document.getElementById('lines');
 
 const diamondPositions = [
   { x: 46.5, y: 45 },
-  { x: 36, y: 54 },
-  { x: 58, y: 54 },
-  { x: 46.5, y: 62 },
+  { x: 36, y: 50 },
+  { x: 58, y: 53 },
+  { x: 47.5, y: 60 },
   { x: 37.5, y: 71 },
-  { x: 56, y: 71 }
+  { x: 58, y: 69 }
 ];
 
 function placeNodes() {
