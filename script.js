@@ -128,31 +128,15 @@ function loadGithubRepos() {
         }
       );
 
-      const projectImages = [
-        'images/Miami_housing.png',
-        'images/carResale.png',
-        'images/PM_tool.png',
-        'images/regression.png'
-      ];
-
-      filteredRepos.forEach((repo, index) => {
+      filteredRepos.forEach((repo) => {
         const card = document.createElement('div');
         card.className = 'repo-card';
 
-        const imageSrc = projectImages[index] || projectImages[index % projectImages.length];
-
         card.innerHTML = `
-          <div class="repo-image">
-            <img src="${imageSrc}" alt="${repo.name} preview" onerror="this.onerror=null;this.src='images/PM_tool.png';">
-          </div>
-          <div class="repo-content">
-            <h3>${repo.name}</h3>
-            <p>${repo.description || 'No description available.'}</p>
-            <div class="repo-meta">${repo.language ? `Language: ${repo.language}` : ''}</div>
-            <div class="repo-links">
-              <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer" class="github-btn">View on GitHub</a>
-            </div>
-          </div>
+          <h3>${repo.name}</h3>
+          <p>${repo.description || 'No description available.'}</p>
+          <div class="repo-meta">${repo.language ? `Language: ${repo.language}` : ''}</div>
+          <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer">View on GitHub</a>
         `;
 
         repoContainer.appendChild(card);
