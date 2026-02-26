@@ -148,13 +148,9 @@ function loadGithubRepos() {
           <div class="repo-content">
             <h3>${repo.name}</h3>
             <p>${repo.description || 'No description available.'}</p>
-            <div class="repo-meta">
-              ${repo.language ? `Language: ${repo.language}` : ''}
-            </div>
+            <div class="repo-meta">${repo.language ? `Language: ${repo.language}` : ''}</div>
             <div class="repo-links">
-              <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer" class="github-btn">
-                View on GitHub
-              </a>
+              <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer" class="github-btn">View on GitHub</a>
             </div>
           </div>
         `;
