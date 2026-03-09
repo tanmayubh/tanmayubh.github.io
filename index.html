@@ -3,204 +3,175 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css?v=20260217-1">
+    <title>Tanmay Ubhate | Backend, DevOps, Data Systems</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=20260309-1">
   </head>
   <body>
-    <nav class="ribbon" aria-label="Primary">
-      <button class="nav-btn active" data-page="home">Home</button>
-      <button class="nav-btn" data-page="about">About</button>
-      <button class="nav-btn" data-page="tech">Tech</button>
-      <button class="nav-btn" data-page="projects">Projects</button>
-      <button class="nav-btn" data-page="experience">Experience</button>
-    </nav>
+    <div class="bg-orb bg-orb-a" aria-hidden="true"></div>
+    <div class="bg-orb bg-orb-b" aria-hidden="true"></div>
 
-    <main class="pages">
-      <section id="home" class="page active home-page" aria-label="Home">
-        <h1 class="home-title">STEP INSIDE</h1>
-        <h2 class="home-subtitle">Modern Networks. Intelligent Solutions.</h2>
+    <header class="top-nav" aria-label="Primary Navigation">
+      <a class="brand" href="#home">Tanmay Ubhate</a>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#stack">Stack</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-        <svg id="lines" aria-hidden="true"></svg>
-
-        <div class="nodes" aria-hidden="true">
-          <img src="images/node1.png" class="node" alt="Network node 1">
-          <img src="images/node2.png" class="node" alt="Network node 2">
-          <img src="images/node3.png" class="node" alt="Network node 3">
-          <img src="images/node4.png" class="node" alt="Network node 4">
-          <img src="images/node5.png" class="node" alt="Network node 5">
-          <img src="images/node6.png" class="node" alt="Network node 6">
-        </div>
-
-        <img id="footstep" class="footstep" src="images/steps.png" alt="Walking footsteps">
-
-        <div class="conveyor-wrapper" aria-hidden="true">
-          <img src="images/conveyor.png" class="conveyor" alt="Conveyor belt graphic">
-          <div class="text-track">
-            <span>Transparent Workflows</span>
-            <span>Empowering Governance</span>
-            <span>Collective Ownership</span>
+    <main>
+      <section id="home" class="hero section">
+        <div class="hero-text reveal">
+          <p class="eyebrow">Network Visibility Tech Services</p>
+          <h1>Backend, DevOps, and Data-Driven Systems for Measurable Business Growth.</h1>
+          <p class="intro">
+            I help businesses increase technical visibility and acquire clients through protocol-compliant,
+            backend-first solutions.
+          </p>
+          <div class="cta-row">
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a href="assets/Lebenslauf_T_Ubhate.pdf" class="btn btn-secondary" download>Download CV</a>
+          </div>
+          <div class="tag-row">
+            <span>Network Discovery</span>
+            <span>API Integrations</span>
+            <span>B2B Growth</span>
+            <span>Cloud Delivery</span>
+            <span>Operational Visibility</span>
           </div>
         </div>
-      </section>
-
-      <section id="about" class="page content-page" aria-label="About">
-        <div class="content-wrap">
-          <h1>About Me</h1>
-          <p>
-            <strong>My Story:</strong> My foundation in mechanical engineering fueled my curiosity in manufacturing and
-            automation production lines, shaping how I understand systems at scale. I now work in software backend
-            development and DevOps, while strengthening my expertise in network architecture and cybersecurity.
-          </p>
-          <p>
-            <strong>Philosophy:</strong> I translate client and team pain points into B2B products designed for real
-            adoption. I actively explore market validation, penetration strategies, data analytics, and emerging
-            technological white spaces to identify opportunities where technology can create defensible advantage.
-          </p>
-          <p>
-            <strong>Vision:</strong> With an Industrial Engineering background, I am learning to build collaborative
-            software ventures that enable sustainable processes and resource efficiency, bridging technical depth with
-            business insight.
-          </p>
-          <p>
-            <strong>Life Beyond Work:</strong> I maintain balance by discovering great places to eat, see, drink, and
-            enjoy vibrant social experiences. Music is a passion, initially hip-hop and now techno, and I look forward
-            to producing with my own MIDI setup. I also enjoy baking and experimenting with flavors in the kitchen.
-          </p>
+        <div class="hero-photo reveal">
+          <img src="https://github.com/tanmayubh.png" alt="Tanmay Ubhate profile photo">
         </div>
       </section>
 
-      <section id="tech" class="page content-page" aria-label="Technology Stack">
-        <div class="content-wrap">
-          <h1>Technology Stack</h1>
-          <div class="tech-grid">
-            <div class="tech-card">
-              <img src="images/sts.png" alt="Spring Tool Suite">
-              <h3>Spring Tool Suite</h3>
-              <div class="tech-keywords">
-                <span>JDBC</span>
-                <span>JPA</span>
-                <span>PostgreSQL</span>
-                <span>Spring Web Server</span>
-              </div>
-            </div>
+      <section id="about" class="section">
+        <div class="section-head reveal">
+          <p class="eyebrow">Business Focus</p>
+          <h2>Building systems that turn technical presence into qualified client conversations.</h2>
+        </div>
+        <div class="focus-grid reveal">
+          <article>
+            <h3>Service Visibility</h3>
+            <p>Network-level discoverability across partner and client ecosystems.</p>
+          </article>
+          <article>
+            <h3>Backend Platforms</h3>
+            <p>Scalable workflow systems, secure APIs, and robust persistence layers.</p>
+          </article>
+          <article>
+            <h3>Cloud Delivery</h3>
+            <p>Containerized deployment pipelines using AWS and Docker for reliable operations.</p>
+          </article>
+          <article>
+            <h3>Analytics Loop</h3>
+            <p>Forecasting and trend analysis to guide growth decisions with measurable outcomes.</p>
+          </article>
+        </div>
 
-            <div class="tech-card">
-              <img src="images/java.png" alt="Java">
-              <h3>Java</h3>
-              <div class="tech-keywords">
-                <span>OOP</span>
-                <span>Encapsulation</span>
-                <span>Inheritance</span>
-                <span>Annotations</span>
-                <span>Controllers</span>
-                <span>Services</span>
-                <span>Repositories</span>
-                <span>Entity Relationships</span>
-                <span>Auto-generated IDs</span>
-                <span>Repository Pattern</span>
-                <span>MVC</span>
-                <span>Controller -> Service -> Repository -> Database</span>
-                <span>Data Binding</span>
-                <span>Request Mapping</span>
-                <span>Input Processing</span>
-              </div>
-            </div>
-
-            <div class="tech-card">
-              <img src="images/postgres.png" alt="PostgreSQL">
-              <h3>PostgreSQL</h3>
-              <div class="tech-keywords">
-                <span>Data Types</span>
-                <span>Filtering & Sorting</span>
-                <span>Aggregations & Grouping</span>
-                <span>Joins (Combine Tables)</span>
-                <span>Constraints & Indexes</span>
-                <span>Transactions & ACID</span>
-                <span>Stored Procedures / Functions</span>
-                <span>Triggers</span>
-              </div>
-            </div>
-
-            <div class="tech-card">
-              <img src="images/python.png" alt="Python Data Analytics">
-              <h3>Python (Data Analytics)</h3>
-              <div class="tech-keywords">
-                <span>NumPy</span>
-                <span>Pandas</span>
-                <span>Matplotlib</span>
-                <span>Seaborn</span>
-              </div>
-              <h4 class="tech-subheading">Scikit-learn</h4>
-              <div class="tech-keywords">
-                <span>Linear Regression</span>
-                <span>Ridge Regression</span>
-                <span>Lasso Regression</span>
-                <span>Polynomial Regression</span>
-              </div>
-            </div>
-
-            <div class="tech-card">
-              <img src="images/aws.png" alt="AWS">
-              <h3>AWS Cloud Services</h3>
-              <div class="tech-keywords">
-                <span>RDS</span>
-                <span>S3</span>
-                <span>EC2</span>
-                <span>IAM</span>
-              </div>
-            </div>
-
-            <div class="tech-card">
-              <img src="images/vscode.png" alt="Python Web Development and Backend">
-              <h3>Python Web Development / Backend</h3>
-              <div class="tech-keywords">
-                <span>FastAPI</span>
-                <span>Starlette</span>
-                <span>Uvicorn</span>
-                <span>SQLAlchemy</span>
-                <span>Alembic</span>
-                <span>psycopg2-binary</span>
-                <span>Pydantic</span>
-                <span>python-jose</span>
-                <span>bcrypt</span>
-                <span>passlib</span>
-                <span>python-dotenv</span>
-              </div>
-            </div>
-
-            <div class="tech-card">
-              <img src="images/docker.png" alt="Docker">
-              <h3>Docker</h3>
-              <div class="tech-keywords">
-                <span>Containerization</span>
-                <span>Image creation</span>
-                <span>Multi-container setups</span>
-                <span>Linked PostgreSQL DB</span>
-                <span>Environment variable management</span>
-                <span>Deploy lightweight</span>
-                <span>Reproducible environments</span>
-              </div>
-            </div>
-          </div>
+        <div class="journey reveal">
+          <h3>Engagement Model</h3>
+          <ol>
+            <li>Discovery: business context, client profile, and ecosystem mapping.</li>
+            <li>System Design: protocol-aligned architecture and integration strategy.</li>
+            <li>Delivery: backend implementation, deployment, and instrumentation.</li>
+            <li>Optimization: analytics feedback loop for lead quality and growth outcomes.</li>
+          </ol>
         </div>
       </section>
 
-      <section id="projects" class="page content-page" aria-label="Projects">
-        <div class="content-wrap">
-          <h1>GitHub Projects</h1>
-          <div id="repo-container" class="repo-grid"></div>
+      <section id="projects" class="section">
+        <div class="section-head reveal">
+          <p class="eyebrow">Featured Projects</p>
+          <h2>Visual portfolio from my GitHub README.</h2>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card reveal">
+            <img src="images/Miami_housing.png" alt="Miami Housing Analytics visual">
+            <div>
+              <h3>Miami Housing Analytics</h3>
+              <p>Regression-oriented analysis focused on feature engineering and model interpretation.</p>
+              <span>Regression • Market Trends • Forecasting</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <img src="images/carResale.png" alt="Car Resale Intelligence visual">
+            <div>
+              <h3>Car Resale Intelligence</h3>
+              <p>Pricing and resale workflow with structured data processing and value prediction.</p>
+              <span>ML Modeling • Value Estimation • Data Processing</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <img src="images/PM_tool.png" alt="Modernized Project Management Tool visual">
+            <div>
+              <h3>Modernized Project Management Tool</h3>
+              <p>Modular task and workflow platform with backend services and persistence architecture.</p>
+              <span>Workflow Systems • Backend Services • Scalability</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <img src="images/Miami_housing.png" alt="Regression Model Suite visual">
+            <div>
+              <h3>Regression Model Suite</h3>
+              <p>Comparative experiments across linear, ridge, lasso, and polynomial regression models.</p>
+              <span>Model Evaluation • Comparative Analysis • Forecast Quality</span>
+            </div>
+          </article>
         </div>
       </section>
 
-      <section id="experience" class="page content-page" aria-label="Experience">
-        <div class="content-wrap experience-wrap">
-          <h1>Experience</h1>
-          <p>Professional journey and leadership experiences.</p>
-          <a href="assets/Lebenslauf_T_Ubhate.pdf" download class="cv-btn">Download CV</a>
+      <section id="stack" class="section">
+        <div class="section-head reveal">
+          <p class="eyebrow">Technology Stack</p>
+          <h2>Tools I use to build and operate backend-first products.</h2>
+        </div>
+
+        <div class="stack-grid">
+          <article class="stack-card reveal">
+            <img src="images/java.png" alt="Java icon">
+            <h3>Backend & APIs</h3>
+            <p>Java, Spring Tool Suite, JDBC, JPA, FastAPI, SQLAlchemy, Alembic, REST API design.</p>
+          </article>
+          <article class="stack-card reveal">
+            <img src="images/postgres.png" alt="PostgreSQL icon">
+            <h3>Data & Databases</h3>
+            <p>PostgreSQL, NumPy, Pandas, Matplotlib, Seaborn, and scikit-learn regression workflows.</p>
+          </article>
+          <article class="stack-card reveal">
+            <img src="images/aws.png" alt="AWS icon">
+            <h3>Cloud & DevOps</h3>
+            <p>AWS (EC2, S3, RDS, IAM), Docker containerization, reproducible multi-service environments.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact-section">
+        <div class="section-head reveal">
+          <p class="eyebrow">Contact</p>
+          <h2>Let’s build technical systems that drive business outcomes.</h2>
+        </div>
+        <div class="contact-links reveal">
+          <a href="mailto:tanmay.ubhate143@gmail.com">tanmay.ubhate143@gmail.com</a>
+          <a href="https://www.linkedin.com/in/tanmay-ubhate11/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/tanmayubh" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://tanmayubh.github.io/" target="_blank" rel="noopener noreferrer">Website</a>
         </div>
       </section>
     </main>
 
-    <script src="script.js?v=20260217-1"></script>
+    <footer class="site-footer">
+      <p>Copyright © <span id="year"></span> Tanmay Ubhate. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js?v=20260309-1"></script>
   </body>
 </html>
