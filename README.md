@@ -30,22 +30,29 @@ I help businesses increase **technical visibility** and acquire clients in activ
 
 ## Featured Projects
 
-### 1. Miami Housing Analytics
+### 1. Global Tech Insight Hub (Spring Boot Backend)
+- Real-world backend platform that ingests public ecosystem data (World Bank API, GitHub REST API).
+- Generates operational insights and automated PM recommendations to reduce team coordination workload.
+- Focus: REST API design, data pipeline orchestration, security controls, containerized deployment.
+- Tech: Spring Boot, PostgreSQL, Docker, scheduled batch processing.
+- Visual: `images/conveyor.png`
+
+### 2. Miami Housing Analytics
 - Regression-oriented data analysis for housing market insights.
 - Focus: feature engineering, statistical trends, model interpretation.
 - Visual: `images/Miami_housing.png`
 
-### 2. Car Resale Intelligence
+### 3. Car Resale Intelligence
 - Pricing/resale analysis workflow with structured data processing.
 - Focus: predictive modeling and value estimation.
 - Visual: `images/carResale.png`
 
-### 3. Modernized Project Management Tool
+### 4. Modernized Project Management Tool
 - Modular task and workflow platform for collaborative execution.
 - Focus: backend services, persistence layer, scalable architecture.
 - Visual: `images/PM_tool.png`
 
-### 4. Regression Model Suite
+### 5. Regression Model Suite
 - Multiple regression experiments for forecasting and comparative model quality.
 - Focus: linear, ridge, lasso, and polynomial regression.
 - Visual: `images/regression.png`
